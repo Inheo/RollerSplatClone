@@ -1,49 +1,51 @@
-﻿using UnityEngine ;
-using DG.Tweening ;
-using System.Collections.Generic ;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
-public class BallRoadPainter : MonoBehaviour {
-   [SerializeField] private LevelManager levelManager ;
-   [SerializeField] private BallMovement ballMovement ;
-   [SerializeField] private MeshRenderer ballMeshRenderer ;
+public class BallRoadPainter : MonoBehaviour
+{
+    [SerializeField] private LevelManager levelManager;
+    [SerializeField] private BallMovement ballMovement;
+    [SerializeField] private MeshRenderer ballMeshRenderer;
 
-   public int paintedRoadTiles = 0 ;
+    public int paintedRoadTiles = 0;
 
-   private void Start () {
-      //paint ball:
-      ballMeshRenderer.material.color = levelManager.paintColor ;
+   private void Start()
+   {
+      ballMeshRenderer.material.color = levelManager.paintColor;
+      Paint(levelManager.defaultBallRoadTile, .5f, 0f);
 
-      //paint default ball tile:
-      Paint (levelManager.defaultBallRoadTile, .5f, 0f) ;
-
-      //paint ball road :
-      ballMovement.onMoveStart += OnBallMoveStartHandler ;
+      ballMovement.onMoveStart += OnBallMoveStart;
    }
 
-   private void OnBallMoveStartHandler (List<RoadTile> roadTiles, float totalDuration) {
-      float stepDuration = totalDuration / roadTiles.Count ;
-      for (int i = 0; i < roadTiles.Count; i++) {
-         RoadTile roadTile = roadTiles [ i ] ;
-         if (!roadTile.isPainted) {
-            float duration = totalDuration / 2f ;
-            float delay = i * (stepDuration / 2f) ;
-            Paint (roadTile, duration, delay) ;
+   private void OnBallMoveStart(List<RoadTile> roadTiles, float totalDuration)
+   {
+      float stepDuration = totalDuration / roadTiles.Count;
+      float duration = totalDuration / 2f;
 
-            //Check if Level Completed:
-            if (paintedRoadTiles == levelManager.roadTilesList.Count) {
-               Debug.Log ("Level Completed") ;
-               // Load new level..
-            }
+      for (int i = 0; i < roadTiles.Count; i++)
+      {
+         RoadTile roadTile = roadTiles[i];
+         if (!roadTile.isPainted)
+         {
+            float delay = i * (stepDuration / 2f);
+            Paint(roadTile, duration, delay);
          }
       }
+
+      CheckCompletedRoad();
    }
 
-   private void Paint (RoadTile roadTile, float duration, float delay) {
-      roadTile.meshRenderer.material
-         .DOColor (levelManager.paintColor, duration)
-         .SetDelay (delay) ;
+    private void CheckCompletedRoad()
+    {
+        if (paintedRoadTiles == levelManager.roadTilesList.Count)
+        {
+            Debug.Log("Level Completed");
+        }
+    }
 
-      roadTile.isPainted = true ;
-      paintedRoadTiles++ ;
-   }
+    private void Paint(RoadTile roadTile, float duration, float delay)
+    {
+        roadTile.Paint(levelManager.paintColor, duration, delay);
+        paintedRoadTiles++;
+    }
 }

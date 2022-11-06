@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 184776044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.307, y: 0.307, z: 0.307}
+  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 382180006}
@@ -533,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 1314683162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.05, z: 0}
-  m_LocalScale: {x: 0.35, y: 1, z: 0.35}
+  m_LocalScale: {x: 0.25, y: 1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2141851458}
@@ -689,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873899240}
   m_LocalRotation: {x: 0.5224985, y: 0, z: 0, w: 0.8526402}
-  m_LocalPosition: {x: 0, y: 6.12, z: -3.27}
+  m_LocalPosition: {x: 0, y: 3.74, z: -2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -742,8 +742,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTexture: {fileID: 2800000, guid: f98062d00c13b7a47889f7b01ba0d7a5, type: 3}
-  prefabWallTile: {fileID: 1985111670741904, guid: 25dcb734ba97ab3488e45052e1290317, type: 3}
-  prefabRoadTile: {fileID: 1772758125090232, guid: 54ac5d5c9a69a4a46b67a6ef8497048d, type: 3}
+  prefabWallTile: {fileID: 3240314980040173087, guid: 25dcb734ba97ab3488e45052e1290317, type: 3}
+  prefabRoadTile: {fileID: 114242629701837400, guid: 54ac5d5c9a69a4a46b67a6ef8497048d, type: 3}
   paintColor: {r: 1, g: 0.2205882, b: 0.8494926, a: 1}
   roadTilesList: []
   defaultBallRoadTile: {fileID: 0}
