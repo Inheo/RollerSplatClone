@@ -376,12 +376,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1ecb9837b7cb64da2c9a58a1385d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeListener: {fileID: 380531746}
-  levelManager: {fileID: 2141851459}
-  stepDuration: 0.1
-  wallsAndRoadsLayer:
+  _inputService: {fileID: 380531746}
+  _levelManager: {fileID: 2141851459}
+  _stepDuration: 0.1
+  _wallsAndRoadsLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1536
 --- !u!4 &382180006
 Transform:
   m_ObjectHideFlags: 0
