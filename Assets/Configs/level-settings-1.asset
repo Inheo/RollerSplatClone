@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48628f730572475e8989b3dcb5880e1, type: 3}
+  m_Name: level-settings-1
+  m_EditorClassIdentifier: 
+  _levelTexture: {fileID: 2800000, guid: 2335ebbfe7df9d342b4d1ed60d01fbcf, type: 3}
+  _paintColor: {r: 0.7764706, g: 0.14901961, b: 1, a: 1}
+  _tilesColor:
+    _roadColor: {r: 0, g: 0, b: 0, a: 1}
+    _wallColor: {r: 1, g: 1, b: 1, a: 1}
