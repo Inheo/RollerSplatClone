@@ -5,13 +5,13 @@ public class RoadTile : MonoBehaviour
 {
    [SerializeField] private MeshRenderer _meshRenderer;
 
-   public Vector3 position { get; private set; }
-   public bool isPainted { get; private set; }
+   public Vector3 Position { get; private set; }
+   public bool IsPainted { get; private set; }
 
    private void Awake()
    {
-      position = transform.position;
-      isPainted = false;
+      Position = transform.position;
+      IsPainted = false;
    }
 
    public void Paint(Color color, float duration, float delay) 
@@ -20,6 +20,6 @@ public class RoadTile : MonoBehaviour
          .DOColor(color, duration)
          .SetDelay(delay);
 
-      isPainted = true;
+      IsPainted = true;
    }
 }

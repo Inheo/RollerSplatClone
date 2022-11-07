@@ -9,7 +9,7 @@ public class BallMovement : MonoBehaviour
     private const float MAX_RAY_DISTANCE = 100f;
 
     [SerializeField] private InputService _inputService;
-    [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private Level _levelManager;
 
     [SerializeField] private float _stepDuration = 0.1f;
     [SerializeField] private LayerMask _wallsAndRoadsLayer;
@@ -21,7 +21,7 @@ public class BallMovement : MonoBehaviour
 
     private void Start()
     {
-        transform.position = _levelManager.defaultBallRoadTile.position;
+        transform.position = _levelManager.DefaultBallRoadTile.Position;
 
         _inputService.onChangedDirection += OnChangedDirection;
     }
@@ -34,7 +34,7 @@ public class BallMovement : MonoBehaviour
 
     private void MoveBall()
     {
-        if (canMove)
+        if (canMove == true && Level.Instance.IsLevelCompleted == false)
         {
             canMove = false;
             // add raycast in the swipe direction (from the ball) :
